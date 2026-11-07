@@ -18,7 +18,9 @@
     "eject": "react-scripts eject",
     "dev": "react-scripts start",
     "serve": "npm --prefix backend start",
-    "test:ui": "react-scripts test --watchAll=false"
+    "test:ui": "react-scripts test --watchAll=false",
+    "build:vercel": "node scripts/build-vercel.cjs",
+    "test:deployment": "node --test --test-isolation=none scripts/deployment.test.cjs"
   },
   "eslintConfig": {
     "extends": [
@@ -39,7 +41,7 @@
     ]
   },
   "engines": {
-    "node": ">=22"
+    "node": "24.x"
   },
   "proxy": "http://localhost:4104",
   "devDependencies": {

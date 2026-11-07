@@ -24,3 +24,7 @@ No persistence backend was introduced. Arithmetic runs only in the browser.
 CRA/react-scripts and the recognizable React component/style structure are retained. It is an intentionally maintained legacy UI, not a Next.js rewrite. A successful build does not establish that every transitive development dependency is vulnerability-free. Frontend external services/fonts retain their availability and privacy limitations. No automatic dependency audit fix or broad visual redesign was applied. The included server/API tests isolate external lookups and do not write to live services.
 
 The unused CRA template test was replaced with a targeted regression check for the actual app workflow. Build dependencies remain a legacy toolchain; they are not part of the maintained Express runtime.
+
+## Vercel preparation
+
+Added a separate deployment configuration and compiled-asset staging step; local launchers and original UI code are unchanged. Tip deploys as a static calculator without its local Express wrapper. See [DEPLOYMENT.md](DEPLOYMENT.md) for required settings, free-tier limits, and the still-pending Vercel/Neon runtime checks. Nothing was deployed by this change.
