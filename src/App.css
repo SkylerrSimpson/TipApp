@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-.App{
-  font-family:  'Space Mono', monospace;
+.App {
+  font-family: "Space Mono", monospace;
 }
 
 .App .overview {
@@ -15,18 +15,16 @@
   height: 100vh;
   background-color: hsl(185, 41%, 84%);
   flex-direction: column;
-  
 }
 
-
 .bill-image {
- content: url('../images/icon-dollar.svg');
- transform: translateY(150%);
- padding-left: 10px;
+  content: url("./images/icon-dollar.svg");
+  transform: translateY(150%);
+  padding-left: 10px;
 }
 
 .people-image {
-  content: url('../images/icon-person.svg');
+  content: url("./images/icon-person.svg");
   height: 15px;
   width: 10px;
   padding-left: 10px;
@@ -35,7 +33,9 @@
 }
 
 .App .overview .tips {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0,0,0,0.1);
+  box-shadow:
+    0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   position: relative;
   border-radius: 8px;
@@ -54,7 +54,7 @@
   padding: 20px;
 }
 
-.bill-box{
+.bill-box {
   width: 100%;
   transform: translateY(-25%);
 }
@@ -64,7 +64,8 @@
   width: 100%;
 }
 
-.bill-box input, .people-box input {
+.bill-box input,
+.people-box input {
   background-color: hsl(185, 41%, 84%);
   border: none;
   outline: none;
@@ -74,8 +75,7 @@
   box-sizing: border-box;
   height: 50%;
   text-align: end;
-  font-family:  'Space Mono', monospace;
-
+  font-family: "Space Mono", monospace;
 }
 
 .bill-box-container {
@@ -116,8 +116,7 @@
   box-sizing: border-box;
   height: 50%;
   text-align: end;
-  font-family:  'Space Mono', monospace;
-
+  font-family: "Space Mono", monospace;
 }
 
 .tip-buttons {
@@ -130,20 +129,19 @@
 
 .tip-buttons button {
   padding: 10px 0;
-  background-color:  hsl(183, 100%, 15%);
+  background-color: hsl(183, 100%, 15%);
   border: none;
   border-radius: 5px;
   color: hsl(186, 14%, 43%);
   font-size: 16px;
   cursor: pointer;
-  font-family:  'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   color: white;
 }
 
 .tip-buttons button:hover {
-  background-color:  hsl(172, 67%, 45%);
-  color:  hsl(183, 100%, 15%);
-
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
 }
 
 .custom-button input {
@@ -156,7 +154,7 @@
 }
 
 .custom-button input::placeholder {
-  color:white;
+  color: white;
 }
 
 .custom-button input:focus {
@@ -169,7 +167,7 @@
   align-items: flex-start;
   gap: 16px;
   margin-left: 20px;
-  background-color:  hsl(183, 100%, 15%);
+  background-color: hsl(183, 100%, 15%);
   width: 50%;
   padding: 20px;
   border-radius: 10px;
@@ -190,16 +188,16 @@
 .tip-amount-text-per-person {
   padding-left: 15px;
   margin-left: 5px;
-  color:  hsl(184, 14%, 56%);
+  color: hsl(184, 14%, 56%);
 }
 
-.tip-perperson-box, .tip-total-box {
+.tip-perperson-box,
+.tip-total-box {
   width: 35%;
   text-align: right;
   padding: 10px;
-  color:  hsl(172, 67%, 45%);
+  color: hsl(172, 67%, 45%);
   font-size: 24px;
-
 }
 
 .total-box {
@@ -210,49 +208,48 @@
 }
 
 .reset {
-  margin-top: auto; 
+  margin-top: auto;
   width: 100%;
-  text-align: center; 
+  text-align: center;
 }
 
 .reset-button {
-  background-color:  hsl(172, 67%, 45%);
+  background-color: hsl(172, 67%, 45%);
 
-  color:  hsl(183, 100%, 15%);
+  color: hsl(183, 100%, 15%);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  width: 100%; 
-  font-family:  'Space Mono', monospace;
-
+  width: 100%;
+  font-family: "Space Mono", monospace;
 }
 
 .reset-button:hover {
   background-color: hsl(184, 14%, 46%);
 }
 
-
 @media (max-width: 790px) {
-
   .bill-image {
-   content: url('../images/icon-dollar.svg');
-   transform: translateY(150%);
-   padding-left: 10px;
+    content: url("./images/icon-dollar.svg");
+    transform: translateY(150%);
+    padding-left: 10px;
   }
-  
+
   .people-image {
-    content: url('../images/icon-person.svg');
+    content: url("./images/icon-person.svg");
     height: 15px;
     width: 10px;
     padding-left: 10px;
     z-index: 1;
     transform: translateY(50%);
   }
-  
+
   .App .overview .tips {
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0,0,0,0.1);
+    box-shadow:
+      0 2px 4px 0 rgba(0, 0, 0, 0.2),
+      0 25px 50px 0 rgba(0, 0, 0, 0.1);
     display: flex;
     position: relative;
     border-radius: 8px;
@@ -262,7 +259,7 @@
     width: 40vh;
     height: 90vh;
   }
-  
+
   .tips-left {
     display: flex;
     flex-direction: column;
@@ -272,73 +269,72 @@
     padding: 20px;
     padding-left: 25px;
   }
-  
-  .bill-box{
+
+  .bill-box {
     width: 100%;
     transform: translateY(-25%);
   }
-  
+
   .people-box {
     transform: translateY(-25%);
     width: 100%;
   }
-  
-  .bill-box input, .people-box input {
+
+  .bill-box input,
+  .people-box input {
     background-color: hsl(185, 41%, 84%);
     border: none;
     outline: none;
     width: 100%;
     padding: 15px;
-    font-size: 18px; 
-    box-sizing: border-box; 
+    font-size: 18px;
+    box-sizing: border-box;
     height: 50%;
     text-align: end;
-    font-family:  'Space Mono', monospace;
-  
+    font-family: "Space Mono", monospace;
   }
-  
+
   .bill-box-container {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  
+
   .people-box-container {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  
+
   .tip-buttons-container {
     transform: translateY(-25%);
-  
+
     margin-top: -20px;
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  
+
   .bill {
     font-size: 12px;
     margin-bottom: 8px;
     color: hsl(183, 100%, 15%);
   }
-  
+
   .bill-box input {
     background-color: hsl(185, 41%, 84%);
     border: none;
     outline: none;
     width: 100%;
     padding: 15px;
-    font-size: 18px; 
+    font-size: 18px;
     box-sizing: border-box;
     height: 50%;
     text-align: end;
-    font-family:  'Space Mono', monospace;
-  
+    font-family: "Space Mono", monospace;
   }
-  
+
   .tip-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -346,25 +342,24 @@
     gap: 10px;
     width: 100%;
   }
-  
+
   .tip-buttons button {
     padding: 10px 0;
-    background-color:  hsl(183, 100%, 15%);
+    background-color: hsl(183, 100%, 15%);
     border: none;
     border-radius: 5px;
     color: hsl(186, 14%, 43%);
     font-size: 16px;
     cursor: pointer;
-    font-family:  'Space Mono', monospace;
+    font-family: "Space Mono", monospace;
     color: white;
   }
-  
+
   .tip-buttons button:hover {
-    background-color:  hsl(172, 67%, 45%);
-    color:  hsl(183, 100%, 15%);
-  
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
   }
-  
+
   .custom-button input {
     width: 80px;
     border: none;
@@ -376,89 +371,130 @@
 
   .bill-box input::placeholder {
     transform: translateY(-10%);
+  }
 
-  }
-  
   .custom-button input::placeholder {
-    color:white;
+    color: white;
   }
-  
+
   .custom-button input:focus {
     outline: none;
   }
-  
+
   .tips-right {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
     margin-left: 20px;
-    background-color:  hsl(183, 100%, 15%);
+    background-color: hsl(183, 100%, 15%);
     width: 75%;
     padding: 20px;
     border-radius: 10px;
     height: 35%;
     transform: translateY(-25%);
-  
   }
-  
+
   .tip-percent-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    
   }
-  
+
   .tip-amount-text {
     padding-left: 5px;
     color: white;
   }
-  
+
   .tip-amount-text-per-person {
     padding-left: 10px;
     margin-left: 5px;
-    color:  hsl(184, 14%, 56%);
+    color: hsl(184, 14%, 56%);
     font-size: 10px;
   }
-  
-  .tip-perperson-box, .tip-total-box {
+
+  .tip-perperson-box,
+  .tip-total-box {
     width: 35%;
     text-align: right;
     padding: 10px;
-    color:  hsl(172, 67%, 45%);
+    color: hsl(172, 67%, 45%);
     font-size: 15px;
-
   }
-  
+
   .total-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
-  
+
   .reset {
     margin-top: auto;
     width: 100%;
     text-align: center;
   }
-  
+
   .reset-button {
-    background-color:  hsl(172, 67%, 45%);
-  
-    color:  hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+
+    color: hsl(183, 100%, 15%);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
-    font-family:  'Space Mono', monospace;
-  
+    font-family: "Space Mono", monospace;
   }
-  
+
   .reset-button:hover {
     background-color: hsl(184, 14%, 46%);
+  }
+}
+/* Compatibility and overflow fixes; original color/layout composition retained. */
+.custom-tip-input {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  font: inherit;
+  font-size: 16px;
+  color: hsl(183, 100%, 15%);
+  background: hsl(185, 41%, 84%);
+}
+.tip-buttons button[aria-pressed="true"] {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.App .overview {
+  min-height: 100vh;
+  height: auto;
+  padding: 24px 12px;
+  box-sizing: border-box;
+  position: relative;
+}
+.App .overview .tips {
+  width: min(90vh, calc(100vw - 64px));
+  height: auto;
+  min-height: 40vh;
+}
+@media (max-width: 790px) {
+  .App .overview .tips {
+    width: min(40vh, calc(100vw - 64px));
+    min-height: 90vh;
+  }
+  .tips-left {
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .tips-right {
+    box-sizing: border-box;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
   }
 }

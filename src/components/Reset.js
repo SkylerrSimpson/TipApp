@@ -1,14 +1,16 @@
-
-function Reset({ setBill, setTipPercentage, setPeople }) {
+function Reset({ setBill, setTipPercentage, setPeople, onReset }) {
   const handleReset = () => {
-    setBill(0);
+    setBill("");
     setTipPercentage(0);
-    setPeople(1);
+    setPeople("1");
+    onReset();
   };
 
   return (
     <div className="reset">
-      <button className='reset-button' type="button" onClick={handleReset}><b>RESET</b></button>
+      <button className="reset-button" type="button" onClick={handleReset}>
+        <b>RESET</b>
+      </button>
     </div>
   );
 }

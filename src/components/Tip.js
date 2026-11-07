@@ -1,56 +1,66 @@
-import { useState } from 'react';
-
+import { useState } from "react";
 function Tip({ tipPercentage, setTipPercentage }) {
   const [isCustomInputVisible, setIsCustomInputVisible] = useState(false);
-  const [customTip, setCustomTip] = useState('');
-
+  const [customTip, setCustomTip] = useState("");
+  const [error, setError] = useState("");
   const handleTipClick = (percentage) => {
     setTipPercentage(percentage);
-    setIsCustomInputVisible(false); // Hide custom input when a preset percentage is selected
+    setIsCustomInputVisible(false);
+    setError("");
   };
-
-  const handleCustomInputChange = (event) => {
-    setCustomTip(event.target.value);
-  };
-
-  const handleCustomInputKeyDown = (event) => {
-    if (event.key === 'Enter' && !isNaN(customTip) && customTip.trim() !== '') {
-      setTipPercentage(parseFloat(customTip));
-      setIsCustomInputVisible(false); // Hide custom input after setting the tip
-      setCustomTip(''); // Clear the input
+  const commit = (event) => {
+    if (event.key !== "Enter") return;
+    const value = Number(customTip);
+    if (!customTip.trim() || !Number.isFinite(value) || value < 0) {
+      setError("Enter a nonnegative tip percentage.");
+      return;
     }
+    handleTipClick(value);
+    setCustomTip("");
   };
-
-  const handleCustomButtonClick = () => {
-    setIsCustomInputVisible(true);
-  };
-
   return (
-    <div className='tip-buttons-container'>
-      <span className='bill'>Select Tip %</span>
-      <div className="tip-buttons">
-          <button onClick={() => handleTipClick(5)}>5%</button>
-          <button onClick={() => handleTipClick(10)}>10%</button>
-          <button onClick={() => handleTipClick(15)}>15%</button>
-          <button onClick={() => handleTipClick(25)}>25%</button>
-          <button onClick={() => handleTipClick(50)}>50%</button>
-          <button className='custom-button' onClick={handleCustomButtonClick}>
-            {isCustomInputVisible ? (
-              <input
-                type="text"
-                value={customTip}
-                onChange={handleCustomInputChange}
-                onKeyDown={handleCustomInputKeyDown}
-                placeholder="Enter %"
-              />
-            ) : (
-              'Custom'
-            )}
+    <div className="tip-buttons-container">
+      <span className="bill" id="tip-label">
+        Select Tip %
+      </span>
+      <div className="tip-buttons" role="group" aria-labelledby="tip-label">
+        {[5, 10, 15, 25, 50].map((value) => (
+          <button
+            key={value}
+            type="button"
+            aria-pressed={value === tipPercentage}
+            onClick={() => handleTipClick(value)}
+          >
+            {value}%
           </button>
-        </div>
+        ))}
+        {isCustomInputVisible ? (
+          <input
+            className="custom-tip-input"
+            aria-label="Custom tip percentage; press Enter to apply"
+            inputMode="decimal"
+            autoFocus
+            value={customTip}
+            onChange={(event) => setCustomTip(event.target.value)}
+            onKeyDown={commit}
+            placeholder="Enter %"
+          />
+        ) : (
+          <button
+            type="button"
+            className="custom-button"
+            onClick={() => setIsCustomInputVisible(true)}
+          >
+            Custom
+          </button>
+        )}
+      </div>
+      {error && (
+        <p role="alert" style={{ fontSize: 12 }}>
+          {error}
+        </p>
+      )}
     </div>
- 
   );
 }
-
 export default Tip;

@@ -1,6 +1,15 @@
 function PerPerson({ tipAmount, totalAmount }) {
   return (
-    <>
+    <div
+      role="status"
+      aria-live="polite"
+      style={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        gap: 16,
+      }}
+    >
       <div className="tip-percent-box">
         <div className="tip-amount-text">Tip Amount</div>
         <div className="tip-amount-text-per-person">/person</div>
@@ -10,9 +19,9 @@ function PerPerson({ tipAmount, totalAmount }) {
       <div className="total-box">
         <div className="tip-amount-text">Total</div>
         <div className="tip-amount-text-per-person">/person</div>
-        <div className='tip-total-box'>${totalAmount.toFixed(2)}</div>
+        <div className="tip-total-box">${totalAmount.toFixed(2)}</div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,30 +1,21 @@
 function People({ people, setPeople }) {
-
-
-  const handleChanges = (event) => {
-    const value = event.target.value;
-    if (!isNaN(value) && value.trim() !== '') {
-      setPeople(parseFloat(value));
-    } else {
-      setPeople(0); // Default value if input is invalid
-    }
-  };
-
   return (
     <div className="people-box-container">
-      <span className="bill">Number of people</span>
-      <div className="people-image"></div>
+      <label className="bill" htmlFor="people">
+        Number of people
+      </label>
+      <div className="people-image" aria-hidden="true" />
       <div className="people-box">
         <input
-          type='text'
+          id="people"
+          type="text"
+          inputMode="numeric"
           placeholder="How many people?"
-          value={people || ''} // Ensure it's an empty string if null
-          onChange={handleChanges}
+          value={people}
+          onChange={(event) => setPeople(event.target.value)}
         />
       </div>
     </div>
-
   );
 }
-
 export default People;
